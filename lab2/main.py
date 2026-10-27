@@ -30,6 +30,22 @@ def calc_average_temperature(temperatures: list[float]) -> float:
 def calc_min_max_temperature(temperatures: list[float]) -> list[int]:
     return [int(min(temperatures)), int(max(temperatures))]
 
+# Sorts temperatures in ascending order (smallest to largest)
+def sort_temperature(temperatures: list[float]) -> list[float]:
+    return sorted(temperatures)
+
+# Calculates and returns the median temperature
+def calc_median_temperature(temperatures: list[float]) -> float:
+    sorted_temperatures = sorted(temperatures)     # Sort the temperatures first
+    n = len(sorted_temperatures)                   # Count the readings
+    middle = n // 2                                # Find the middle index
+
+    if n % 2 == 1:                                 # Odd number of readings
+        return sorted_temperatures[middle]         # Return the middle value
+    else:                                          # Even number of readings
+        # Return the average of the two middle values
+        return (sorted_temperatures[middle - 1] + sorted_temperatures[middle]) / 2
+
 # Runs main() when this file is executed directly
 if __name__ == "__main__":
     main()
