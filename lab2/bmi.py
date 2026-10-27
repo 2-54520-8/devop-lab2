@@ -14,4 +14,5 @@ def calculate_bmi(height, weight):
         cat = "obese"
     print(f"category: {cat}")
     
-calculate_bmi(weight=57, height=1.73)   
+calculate_bmi(weight=101, height=1.80)   
+
